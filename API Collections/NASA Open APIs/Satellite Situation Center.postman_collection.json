@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "37289ee9-80d4-4751-918a-41682ccafacc",
+		"name": "Satellite Situation Center",
+		"description": "# Satellite Situation Center\n\nSystem to cast geocentric spacecraft location information into a framework of (empirical) geophysical regions\n\n\nThe <a href=\"https://sscweb.sci.gsfc.nasa.gov/WebServices/REST/\">Satellite Situation Center Web (SSCWeb) service</a> has\nbeen developed and is operated jointly by the <a href=\"https://spdf.gsfc.nasa.gov/\">NASA/GSFC Space Physics Data Facility (SPDF)</a> and the National Space Science Data Center (NSSDC) to support a range of NASA science programs\nand to fulfill key international NASA responsibilities including those of NSSDC and the World Data Center-A for Rockets\nand Satellites. The software and associated database of SSCWeb together form a system to cast geocentric spacecraft\nlocation information into a framework of (empirical) geophysical regions and mappings of spacecraft locations along\nlines of the Earth's magnetic field. This capability is one key to mission science planning (both single missions and\ncoordinated observations of multiple spacecraft with ground-based investigations) and to subsequent multi-mission data\nanalysis. To get started with this API please <a href=\"https://sscweb.sci.gsfc.nasa.gov/WebServices/REST/json/\">visit this page</a>.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17026327"
+	},
+	"item": [
+		{
+			"name": "Observatories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(700);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"try {",
+							"    const response = await pm.sendRequest({",
+							"        url: \"https://postman-echo.com/get\",",
+							"        method: \"GET\"",
+							"    });",
+							"} catch (error) {",
+							"    // Handle the error here",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/observatories",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"observatories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SPASE Observatories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Fixed the SyntaxError by adding the closing parenthesis for the last test",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000 ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"",
+							"pm.test(\"Response is in JSON format\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"// Example: Check if the first observatory has the expected structure",
+							"pm.test(\"First observatory has expected fields\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    if (jsonData.observatories && jsonData.observatories.length > 0) {",
+							"        const firstObservatory = jsonData.observatories[0];",
+							"        ",
+							"        pm.expect(firstObservatory).to.have.property(\"id\");",
+							"        pm.expect(firstObservatory).to.have.property(\"name\");",
+							"        pm.expect(firstObservatory).to.have.property(\"location\");",
+							"    }",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/observatories",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"observatories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ground Stations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Log the entire response for debugging",
+							"pm.test(\"Log response body\", function () {",
+							"    console.log(pm.response.json());",
+							"});",
+							"",
+							"// Check if response status is 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Check if response time is acceptable",
+							"pm.test(\"Response time is less than 2000 ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"",
+							"// Check if response is in JSON format",
+							"pm.test(\"Response is in JSON format\", function () {",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"// Check if the first ground station has the expected fields",
+							"pm.test(\"First ground station has expected fields\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    if (jsonData.groundStations && jsonData.groundStations.length > 0) {",
+							"        const firstGroundStation = jsonData.groundStations[0];",
+							"        pm.expect(firstGroundStation).to.have.property(\"id\");",
+							"        pm.expect(firstGroundStation).to.have.property(\"name\");",
+							"        pm.expect(firstGroundStation).to.have.property(\"location\");",
+							"        pm.expect(firstGroundStation).to.have.property(\"type\"); // Example of an additional field",
+							"    }",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/groundStations",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"groundStations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
