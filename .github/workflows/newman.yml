@@ -27,12 +27,4 @@ jobs:
     - name: Run Newman
       run: |
         newman run API Collections/NASA Open APIs/DONKI.postman_collection.json -e API Collections/Envs/NASA Open API ENV.postman_environment.json -r HTML
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:  # Allows manual triggering of the workflow
 
