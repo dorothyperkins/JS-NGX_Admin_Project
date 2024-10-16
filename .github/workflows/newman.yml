@@ -28,4 +28,6 @@ jobs:
 
     - name: Run Newman
       run: |
-        newman run "API Collections/NASA Open APIs/DONKI.postman_collection.json" -e "API Collections/Envs/NASA Open API ENV.postman_environment.json" -r html
+        newman run "API Collections/NASA Open APIs/DONKI.postman_collection.json" -e "API Collections/Envs/NASA Open API ENV.postman_environment.json" -r HTML
+        newman run "API Collections/NASA Open APIs/NASA Image and Video Library.postman_collection.json" -e "API Collections/Envs/Monitor ENV.postman_environment.json" --iteration-count 10
+        newman run "API Collections/NASA Open APIs/NASA Image and Video Library.postman_collection.json" -e "API Collections/Envs/Monitor ENV.postman_environment.json" --verbose
