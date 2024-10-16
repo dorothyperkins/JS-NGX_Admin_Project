@@ -5,6 +5,8 @@ on:
     branches:
       - main  # Change to your default branch
   pull_request:
+    branches:
+      - main  # This will trigger the workflow on pull requests targeting the main branch
 
 jobs:
   newman:
@@ -26,5 +28,4 @@ jobs:
 
     - name: Run Newman
       run: |
-        newman run API Collections/NASA Open APIs/DONKI.postman_collection.json -e API Collections/Envs/NASA Open API ENV.postman_environment.json -r html
-
+        newman run "API Collections/NASA Open APIs/DONKI.postman_collection.json" -e "API Collections/Envs/NASA Open API ENV.postman_environment.json" -r html
