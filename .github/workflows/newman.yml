@@ -26,5 +26,5 @@ jobs:
 
     - name: Run Newman
       run: |
-        newman run API Collections/NASA Open APIs/DONKI.postman_collection.json -e API Collections/Envs/NASA Open API ENV.postman_environment.json -r HTML
+        newman run API Collections/NASA Open APIs/DONKI.postman_collection.json -e API Collections/Envs/NASA Open API ENV.postman_environment.json -r html
 
