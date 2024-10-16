@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "2de81d47-f771-4aef-8b72-5a029650354e",
+		"name": "Satellite Situation Center",
+		"description": "# Satellite Situation Center\n\nSystem to cast geocentric spacecraft location information into a framework of (empirical) geophysical regions\n\n\nThe <a href=\"https://sscweb.sci.gsfc.nasa.gov/WebServices/REST/\">Satellite Situation Center Web (SSCWeb) service</a> has\nbeen developed and is operated jointly by the <a href=\"https://spdf.gsfc.nasa.gov/\">NASA/GSFC Space Physics Data Facility (SPDF)</a> and the National Space Science Data Center (NSSDC) to support a range of NASA science programs\nand to fulfill key international NASA responsibilities including those of NSSDC and the World Data Center-A for Rockets\nand Satellites. The software and associated database of SSCWeb together form a system to cast geocentric spacecraft\nlocation information into a framework of (empirical) geophysical regions and mappings of spacecraft locations along\nlines of the Earth's magnetic field. This capability is one key to mission science planning (both single missions and\ncoordinated observations of multiple spacecraft with ground-based investigations) and to subsequent multi-mission data\nanalysis. To get started with this API please <a href=\"https://sscweb.sci.gsfc.nasa.gov/WebServices/REST/json/\">visit this page</a>.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17026327",
+		"_collection_link": "https://www.postman.com/miguelolave/nasa-open-apis/collection/2ncz0cx/satellite-situation-center?action=share&source=collection_link&creator=17026327"
+	},
+	"item": [
+		{
+			"name": "Observatories",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/observatories",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"observatories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SPASE Observatories",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/observatories",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"observatories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ground Stations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/groundStations",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"groundStations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BfieldModel\": {\r\n        \"ExternalBFieldModel\": [\r\n            \"gov.nasa.gsfc.sscweb.schema.Tsyganenko89CBFieldModel\",\r\n            {\r\n                \"KeyParameterValues\": \"KP_3_3_3\"\r\n            }\r\n        ],\r\n        \"InternalBFieldModel\": \"IGRF\",\r\n        \"TraceStopAltitude\": 100\r\n    },\r\n    \"Description\": \"Complex locator request with nearly all options.\",\r\n    \"OutputOptions\": {\r\n        \"AllLocationFilters\": true,\r\n        \"CoordinateOptions\": [\r\n            \"java.util.ArrayList\",\r\n            [\r\n                {\r\n                    \"Component\": \"X\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"Y\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"Z\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"LAT\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"LON\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"LOCAL_TIME\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                }\r\n            ]\r\n        ],\r\n        \"DistanceFromOptions\": {\r\n            \"BgseXYZ\": true,\r\n            \"BowShock\": true,\r\n            \"Mpause\": true,\r\n            \"NeutralSheet\": true\r\n        },\r\n        \"MinMaxPoints\": 2,\r\n        \"RegionOptions\": {\r\n            \"NorthBTracedFootpoint\": true,\r\n            \"RadialTracedFootpoint\": true,\r\n            \"SouthBTracedFootpoint\": true,\r\n            \"Spacecraft\": true\r\n        },\r\n        \"ValueOptions\": {\r\n            \"BfieldStrength\": true,\r\n            \"DipoleInvLat\": true,\r\n            \"DipoleLValue\": true,\r\n            \"RadialDistance\": true\r\n        }\r\n    },\r\n    \"RegionFilterOptions\": {\r\n        \"MagneticTraceRegions\": {\r\n            \"AuroralOval\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cleft\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cusp\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"LowLatitude\": true,\r\n            \"MidLatitude\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"PolarCap\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            }\r\n        },\r\n        \"RadialTraceRegions\": {\r\n            \"AuroralOval\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cleft\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cusp\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"LowLatitude\": true,\r\n            \"MidLatitude\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"PolarCap\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            }\r\n        },\r\n        \"SpaceRegions\": {\r\n            \"DaysideMagnetosheath\": true,\r\n            \"DaysideMagnetosphere\": true,\r\n            \"DaysidePlasmasphere\": true,\r\n            \"HighLatitudeBoundaryLayer\": true,\r\n            \"InterplanetaryMedium\": true,\r\n            \"LowLatitudeBoundaryLayer\": true,\r\n            \"NightsideMagnetosheath\": true,\r\n            \"NightsideMagnetosphere\": true,\r\n            \"NightsidePlasmasphere\": true,\r\n            \"PlasmaSheet\": true,\r\n            \"TailLobe\": true\r\n        }\r\n    },\r\n    \"Satellites\": [\r\n        \"java.util.ArrayList\",\r\n        [\r\n            {\r\n                \"Id\": \"themisa\",\r\n                \"ResolutionFactor\": 2\r\n            },\r\n            {\r\n                \"Id\": \"themisb\",\r\n                \"ResolutionFactor\": 2\r\n            }\r\n        ]\r\n    ],\r\n    \"TimeInterval\": {\r\n        \"End\": [\r\n            \"javax.xml.datatype.XMLGregorianCalendar\",\r\n            \"2008-01-02T11:59:59.000+0000\"\r\n        ],\r\n        \"Start\": [\r\n            \"javax.xml.datatype.XMLGregorianCalendar\",\r\n            \"2008-01-02T11:00:00.000+0000\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/locations",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BfieldModel\": {\r\n        \"ExternalBFieldModel\": [\r\n            \"gov.nasa.gsfc.sscweb.schema.Tsyganenko89CBFieldModel\",\r\n            {\r\n                \"KeyParameterValues\": \"KP_3_3_3\"\r\n            }\r\n        ],\r\n        \"InternalBFieldModel\": \"IGRF\",\r\n        \"TraceStopAltitude\": 100\r\n    },\r\n    \"Description\": \"Complex locator request with nearly all options.\",\r\n    \"OutputOptions\": {\r\n        \"AllLocationFilters\": true,\r\n        \"CoordinateOptions\": [\r\n            \"java.util.ArrayList\",\r\n            [\r\n                {\r\n                    \"Component\": \"X\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"Y\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"Z\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"LAT\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"LON\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                },\r\n                {\r\n                    \"Component\": \"LOCAL_TIME\",\r\n                    \"CoordinateSystem\": \"GSE\"\r\n                }\r\n            ]\r\n        ],\r\n        \"DistanceFromOptions\": {\r\n            \"BgseXYZ\": true,\r\n            \"BowShock\": true,\r\n            \"Mpause\": true,\r\n            \"NeutralSheet\": true\r\n        },\r\n        \"MinMaxPoints\": 2,\r\n        \"RegionOptions\": {\r\n            \"NorthBTracedFootpoint\": true,\r\n            \"RadialTracedFootpoint\": true,\r\n            \"SouthBTracedFootpoint\": true,\r\n            \"Spacecraft\": true\r\n        },\r\n        \"ValueOptions\": {\r\n            \"BfieldStrength\": true,\r\n            \"DipoleInvLat\": true,\r\n            \"DipoleLValue\": true,\r\n            \"RadialDistance\": true\r\n        }\r\n    },\r\n    \"RegionFilterOptions\": {\r\n        \"MagneticTraceRegions\": {\r\n            \"AuroralOval\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cleft\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cusp\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"LowLatitude\": true,\r\n            \"MidLatitude\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"PolarCap\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            }\r\n        },\r\n        \"RadialTraceRegions\": {\r\n            \"AuroralOval\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cleft\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"Cusp\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"LowLatitude\": true,\r\n            \"MidLatitude\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            },\r\n            \"PolarCap\": {\r\n                \"North\": true,\r\n                \"South\": true\r\n            }\r\n        },\r\n        \"SpaceRegions\": {\r\n            \"DaysideMagnetosheath\": true,\r\n            \"DaysideMagnetosphere\": true,\r\n            \"DaysidePlasmasphere\": true,\r\n            \"HighLatitudeBoundaryLayer\": true,\r\n            \"InterplanetaryMedium\": true,\r\n            \"LowLatitudeBoundaryLayer\": true,\r\n            \"NightsideMagnetosheath\": true,\r\n            \"NightsideMagnetosphere\": true,\r\n            \"NightsidePlasmasphere\": true,\r\n            \"PlasmaSheet\": true,\r\n            \"TailLobe\": true\r\n        }\r\n    },\r\n    \"Satellites\": [\r\n        \"java.util.ArrayList\",\r\n        [\r\n            {\r\n                \"Id\": \"themisa\",\r\n                \"ResolutionFactor\": 2\r\n            },\r\n            {\r\n                \"Id\": \"themisb\",\r\n                \"ResolutionFactor\": 2\r\n            }\r\n        ]\r\n    ],\r\n    \"TimeInterval\": {\r\n        \"End\": [\r\n            \"javax.xml.datatype.XMLGregorianCalendar\",\r\n            \"2008-01-02T11:59:59.000+0000\"\r\n        ],\r\n        \"Start\": [\r\n            \"javax.xml.datatype.XMLGregorianCalendar\",\r\n            \"2008-01-02T11:00:00.000+0000\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sscweb.sci.gsfc.nasa.gov/WS/sscr/2/locations/mms1,mms2/20190101T000000Z,20190101T001000Z/gse,geo",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"sci",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"locations",
+						"mms1,mms2",
+						"20190101T000000Z,20190101T001000Z",
+						"gse,geo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Graphs",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BfieldModel\": {\r\n        \"ExternalBFieldModel\": [\r\n            \"gov.nasa.gsfc.sscweb.schema.Tsyganenko89CBFieldModel\",\r\n            {\r\n                \"KeyParameterValues\": \"KP_3_3_3\"\r\n            }\r\n        ],\r\n        \"InternalBFieldModel\": \"IGRF\",\r\n        \"TraceStopAltitude\": 100\r\n    },\r\n    \"Description\": \"Simple locator graphics (Orbit plot) request.\",\r\n    \"GraphOptions\": [\r\n        \"gov.nasa.gsfc.sscweb.schema.OrbitGraphOptions\",\r\n        {\r\n            \"Combined\": true,\r\n            \"CoordinateSystem\": \"GSE\",\r\n            \"EvenAxesScale\": false,\r\n            \"ImfBz\": 0.0,\r\n            \"ShowBowShockMagnetopause\": true,\r\n            \"SolarWindPressure\": 2.1,\r\n            \"SunToRight\": false,\r\n            \"XrView\": true,\r\n            \"XyView\": true,\r\n            \"XzView\": true,\r\n            \"YzView\": true\r\n        }\r\n    ],\r\n    \"Satellites\": [\r\n        \"java.util.ArrayList\",\r\n        [\r\n            {\r\n                \"Id\": \"themisa\",\r\n                \"ResolutionFactor\": 2\r\n            },\r\n            {\r\n                \"Id\": \"themisb\",\r\n                \"ResolutionFactor\": 2\r\n            }\r\n        ]\r\n    ],\r\n    \"TimeInterval\": {\r\n        \"End\": [\r\n            \"javax.xml.datatype.XMLGregorianCalendar\",\r\n            \"2008-01-02T11:59:59.000+0000\"\r\n        ],\r\n        \"Start\": [\r\n            \"javax.xml.datatype.XMLGregorianCalendar\",\r\n            \"2008-01-02T11:00:00.000+0000\"\r\n        ]\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/graphs",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"graphs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Conjunctions",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Request\": {\r\n        \"BfieldModel\": {\r\n            \"ExternalBFieldModel\": [\r\n                \"gov.nasa.gsfc.sscweb.schema.Tsyganenko89CBFieldModel\",\r\n                {\r\n                    \"KeyParameterValues\": \"KP_3_3_3\"\r\n                }\r\n            ],\r\n            \"InternalBFieldModel\": \"IGRF\",\r\n            \"TraceStopAltitude\": 1\r\n        },\r\n        \"ConditionOperator\": \"ALL\",\r\n        \"Conditions\": [\r\n            \"java.util.ArrayList\",\r\n            [\r\n                [\r\n                    \"gov.nasa.gsfc.sscweb.schema.SatelliteCondition\",\r\n                    {\r\n                        \"Satellite\": [\r\n                            \"java.util.ArrayList\",\r\n                            [\r\n                                {\r\n                                    \"BfieldTraceDirection\": \"SOUTH_HEMISPHERE\",\r\n                                    \"Id\": \"barrel1a\"\r\n                                },\r\n                                {\r\n                                    \"BfieldTraceDirection\": \"SOUTH_HEMISPHERE\",\r\n                                    \"Id\": \"rbspa\"\r\n                                },\r\n                                {\r\n                                    \"BfieldTraceDirection\": \"SOUTH_HEMISPHERE\",\r\n                                    \"Id\": \"rbspb\"\r\n                                }\r\n                            ]\r\n                        ],\r\n                        \"SatelliteCombination\": 1\r\n                    }\r\n                ],\r\n                [\r\n                    \"gov.nasa.gsfc.sscweb.schema.LeadSatelliteCondition\",\r\n                    {\r\n                        \"ConjunctionArea\": [\r\n                            \"gov.nasa.gsfc.sscweb.schema.BoxConjunctionArea\",\r\n                            {\r\n                                \"CoordinateSystem\": \"GEO\",\r\n                                \"DeltaLatitude\": 3.0,\r\n                                \"DeltaLongitude\": 10.0\r\n                            }\r\n                        ],\r\n                        \"Satellite\": [\r\n                            \"java.util.ArrayList\",\r\n                            [\r\n                                {\r\n                                    \"BfieldTraceDirection\": \"SOUTH_HEMISPHERE\",\r\n                                    \"Id\": \"barrel1a\"\r\n                                }\r\n                            ]\r\n                        ],\r\n                        \"TraceType\": \"B_FIELD\"\r\n                    }\r\n                ]\r\n            ]\r\n        ],\r\n        \"Description\": \"Magnetic conjunction of at least 1 RBSP satellites with BARREL 1A (lead satellite).\",\r\n        \"ExecuteOptions\": {\r\n            \"WaitForResult\": true\r\n        },\r\n        \"ResultOptions\": {\r\n            \"FormatOptions\": {\r\n                \"DateFormat\": \"YYYY_DDD\",\r\n                \"DegreeDigits\": 2,\r\n                \"DegreeFormat\": \"DECIMAL\",\r\n                \"DistanceDigits\": 1,\r\n                \"DistanceFormat\": \"INTEGER_KM\",\r\n                \"LatLonFormat\": \"LAT_90_LON_360\",\r\n                \"LinesPerPage\": 55,\r\n                \"TimeFormat\": \"HH_HHHH\"\r\n            },\r\n            \"IncludeQueryInResult\": true,\r\n            \"QueryResultType\": \"XML\",\r\n            \"SubSatelliteCoordinateSystem\": \"GEO\",\r\n            \"SubSatelliteCoordinateSystemType\": \"SPHERICAL\",\r\n            \"TraceCoordinateSystem\": \"GEO\"\r\n        },\r\n        \"TimeInterval\": {\r\n            \"End\": [\r\n                \"javax.xml.datatype.XMLGregorianCalendar\",\r\n                \"2013-02-14T00:00:00.000+0000\"\r\n            ],\r\n            \"Start\": [\r\n                \"javax.xml.datatype.XMLGregorianCalendar\",\r\n                \"2013-01-29T00:00:00.000+0000\"\r\n            ]\r\n        }\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sscweb.gsfc.nasa.gov/WS/sscr/2/conjunctions",
+					"protocol": "https",
+					"host": [
+						"sscweb",
+						"gsfc",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"WS",
+						"sscr",
+						"2",
+						"conjunctions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

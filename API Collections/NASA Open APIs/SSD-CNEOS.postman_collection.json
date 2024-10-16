@@ -1,0 +1,594 @@
+{
+	"info": {
+		"_postman_id": "caff0b22-1dd8-4b2d-957e-61d2e4466415",
+		"name": "SSD/CNEOS",
+		"description": "# SSD/CNEOS\nSolar System Dynamics and Center for Near-Earth Object Studies\n\nWelcome to JPL’s <a href=\"http://ssd.jpl.nasa.gov/\">SSD</a>\n(Solar System Dynamics) and <a href=\"http://cneos.jpl.nasa.gov\">CNEOS</a> (Center for Near-Earth Object Studies) API\n(Application Program Interface) service. This service provides an interface to machine-readable data (<a\n    href=\"http://www.json.org/\">JSON</a>-format) related to <a href=\"http://ssd.jpl.nasa.gov\">SSD</a> and <a\n    href=\"http://cneos.jpl.nasa.gov\">CNEOS</a>.If you are looking for human-readable data, please go to the main\nwebsites for <a href=\"http://ssd.jpl.nasa.gov/\">SSD</a> and/or <a href=\"http://cneos.jpl.nasa.gov/\">CNEOS</a>. For\nfurther information on this API and its component services, please visit the <a href=\"http://ssd-api.jpl.nasa.gov/\">JPL\n    SSD/CNEOS API</a> main website or contact <a\n    href=\"mailto:contact-ssd-api@jpl.nasa.gov\">contact-ssd-api@jpl.nasa.gov</a>.This API consists of the following\ncomponent services:\n\n<table>\n    <thead>\n        <tr>\n            <th style=\"text-align: left\">API</th>\n            <th style=\"text-align: left\">Description</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr valign=\"top\">\n            <td style=\"text-align: left\"><a href=\"#CAD\">CAD</a></td>\n            <td style=\"text-align: left\">Asteroid and comet close approaches to the planets in the past and future</td>\n        </tr>\n        <tr valign=\"top\">\n            <td style=\"text-align: left\"><a href=\"#Fireball\">Fireball</a></td>\n            <td style=\"text-align: left\">Fireball atmospheric impact data reported by US Government sensors</td>\n        </tr>\n        <tr valign=\"top\">\n            <td style=\"text-align: left\"><a href=\"#MissionDesign\">Mission Design</a></td>\n            <td style=\"text-align: left\">Mission Design - Small-body mission design suite</td>\n        </tr>\n        <tr valign=\"top\">\n            <td style=\"text-align: left\"><a href=\"#NHATS\">NHATS</a></td>\n            <td style=\"text-align: left\">Human-accessible NEOs data</td>\n        </tr>\n        <tr valign=\"top\">\n            <td style=\"text-align: left\"><a href=\"#Scout\">Scout</a></td>\n            <td style=\"text-align: left\">NEOCP orbits, ephemerides, and impact risk data</td>\n        </tr>\n        <tr valign=\"top\">\n            <td style=\"text-align: left\"><a href=\"#Sentry\">Sentry</a></td>\n            <td style=\"text-align: left\">NEO Earth impact risk assessment data</td>\n        </tr>\n    </tbody>\n</table>\n\n\n<h2 id=\"CAD\">CAD</h2> This API provides access to current close-approach data for all asteroids and comets in JPL’s <a\n    href=\"http://ssd.jpl.nasa.gov/sbdb.cgi\">SBDB</a> (Small-Body DataBase). Defaults for query parameters are setup for\na typical CNEOS web-site search: NEO Earth close-approaches less than 0.05 au in the next 60 days sorted by date.For\ncomplete API documentation please visit the <a href=\"http://ssd-api.jpl.nasa.gov/doc/cad.html\">JPL SBDB Close-Approach\n    Data API</a> website.<h2 id=\"Fireball\">Fireball</h2> The fireball data API provides a method of requesting specific\nrecords from the available data-set. Every successful query will return content representing one or more fireball data\nrecords. See the CNEOS page on <a href=\"http://cneos.jpl.nasa.gov/fireballs/\">fireballs</a> for details on this\ndata-set.For complete API documentation please visit the <a href=\"http://ssd-api.jpl.nasa.gov/doc/fireball.html\">JPL\n    Fireball Data API</a> website.<h2 id=\"MissionDesign\">Mission Design</h2> This API provides access to the JPL/SSD\nsmall-body mission design suite. Please see the <a href=\"https://ssd-api.jpl.nasa.gov/doc/mdesign.html\">Mission Design\n    web-page</a> for details about Mission Design.For complete API documentation please visit the <a\n    href=\"https://ssd-api.jpl.nasa.gov/doc/mdesign.html\">JPL Mission Design API</a> website.<h2 id=\"NHATS\">NHATS</h2>\nThe NHATS API provides a method of requesting data from the NHATS-related tables in the SBDB. These data will primarily\nsupport the CNEOS “Accessible NEAs” web-page. Please see the <a href=\"http://cneos.jpl.nasa.gov/nhats/\">NHATS\n    web-page</a> for details about NHATS.For complete API documentation please visit the <a\n    href=\"http://ssd-api.jpl.nasa.gov/doc/nhats.html\">JPL NHATS API</a> website.<h2 id=\"Scout\">Scout</h2> This API\nprovides access to near-realtime results from the CNEOS Scout system. Various query modes provide access to available\nsubsets of data. Please see the <a href=\"https://ssd-api.jpl.nasa.gov/doc/scout.html\">Scout web-page</a> for details\nabout Scout.For complete API documentation please visit the <a href=\"https://ssd-api.jpl.nasa.gov/doc/scout.html\">JPL\n    Scout API</a> website.<h2 id=\"Sentry\">Sentry</h2> This API provides access to results from the <a\n    href=\"http://cneos.jpl.nasa.gov/risk/\">CNEOS Sentry system</a>. There are various \"modes\" used to obtain desired\ndata. \n\n* <code class=\"highlighter-rouge\">O</code> - object-specific details table \n* <code\n    class=\"highlighter-rouge\">S</code> - summary table \n* <code class=\"highlighter-rouge\">V</code> - VI (virtual\nimpactor) table \n* <code class=\"highlighter-rouge\">R</code> - removed-objects tableFor complete API documentation please\nvisit the <a href=\"http://ssd-api.jpl.nasa.gov/doc/sentry.html\">JPL Sentry API</a> website.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17026327",
+		"_collection_link": "https://www.postman.com/miguelolave/nasa-open-apis/collection/0t1s1g0/ssd-cneos?action=share&source=collection_link&creator=17026327"
+	},
+	"item": [
+		{
+			"name": "CAD",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/cad.api?date-min=1900-01-01&date-max=2100-01-01&des=433&dist-max=0.2",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"cad.api"
+					],
+					"query": [
+						{
+							"key": "date-min",
+							"value": "1900-01-01"
+						},
+						{
+							"key": "date-max",
+							"value": "2100-01-01"
+						},
+						{
+							"key": "dist-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "h-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "h-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "v-inf-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "v-inf-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "v-rel-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "v-rel-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "class",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "pha",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "nea",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "comet",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "nea-comet",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "neo",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "kind",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "spk",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "des",
+							"value": "433"
+						},
+						{
+							"key": "body",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "fullname",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "dist-max",
+							"value": "0.2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Firewall",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/fireball.api",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"fireball.api"
+					],
+					"query": [
+						{
+							"key": "date-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "date-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "energy-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "energy-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "impact-e-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "impact-e-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "vel-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "vel-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "alt-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "alt-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "req-loc",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "req-alt",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "req-vel",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "req-vel-comp",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "vel-comp",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mission Design",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/mdesign.api?des=2012%20TC4",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"mdesign.api"
+					],
+					"query": [
+						{
+							"key": "des",
+							"value": "2012%20TC4"
+						},
+						{
+							"key": "spk",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sstr",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "class",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "mjd0",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "span",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "tof-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "tof-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "step",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NHATS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/nhats.api",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"nhats.api"
+					],
+					"query": [
+						{
+							"key": "dv",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "dur",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "stay",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "launch",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "h",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "occ",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "spk",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "des",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "plot",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/scout.api",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"scout.api"
+					],
+					"query": [
+						{
+							"key": "tdes",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "plot",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "orbits",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "n-orbits",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "eph-start",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "eph-stop",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "eph-step",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "obs-code",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "fov-diam",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "fov-ra",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "fov-dec",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "fov-vmag",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sentry",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ssd-api.jpl.nasa.gov/sentry.api",
+					"protocol": "https",
+					"host": [
+						"ssd-api",
+						"jpl",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"sentry.api"
+					],
+					"query": [
+						{
+							"key": "spk",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "des",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "h-max",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "ps-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "ip-min",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "days",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "all",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "removed",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
