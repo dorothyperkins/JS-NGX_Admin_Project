@@ -31,3 +31,4 @@ jobs:
         newman run "API Collections/NASA Open APIs/DONKI.postman_collection.json" -e "API Collections/Envs/NASA Open API ENV.postman_environment.json" -r HTML
         newman run "API Collections/NASA Open APIs/NASA Image and Video Library.postman_collection.json" -e "API Collections/Envs/Monitor ENV.postman_environment.json" --iteration-count 10
         newman run "API Collections/NASA Open APIs/NASA Image and Video Library.postman_collection.json" -e "API Collections/Envs/Monitor ENV.postman_environment.json" --verbose
+        newman run "API Collections/Reqres _test_API_collections_with_Assertions.postman_collection.json"  --iteration-count 10
